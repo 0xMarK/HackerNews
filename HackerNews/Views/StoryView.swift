@@ -47,7 +47,7 @@ struct StoryView: View {
                         }
                     }
             }
-            NavigationLink(destination: Text("Author"), isActive: $showingAuthor) {
+            NavigationLink(destination: UserView(id: story.by), isActive: $showingAuthor) {
                 EmptyView()
             }
             .frame(width: 0, height: 0)

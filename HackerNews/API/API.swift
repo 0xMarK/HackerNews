@@ -102,5 +102,29 @@ class API {
             }
         }.resume()
     }
+    
+    func user(id: String, _ completion: @escaping (Result<User, Error>) -> Void) {
+        guard let url = URL(string: baseURL + "/user/\(id).json") else { fatalError() }
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data else {
+                let err = error ?? NSError(domain: NSURLErrorDomain, code: 0, userInfo: [NSLocalizedDescriptionKey: "No data in response"])
+                DispatchQueue.main.async {
+                    completion(.failure(err))
+                }
+                return
+            }
+            do {
+                let item = try JSONDecoder().decode(User.self, from: data)
+                print("User", item)
+                DispatchQueue.main.async {
+                    completion(.success(item))
+                }
+            } catch let error {
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+            }
+        }.resume()
+    }
 
 }
