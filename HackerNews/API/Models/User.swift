@@ -9,7 +9,7 @@ import Foundation
 
 struct User: Codable {
     
-    let about: String
+    let about: String?
     let created : Int
     let id: String
     let karma: Int
