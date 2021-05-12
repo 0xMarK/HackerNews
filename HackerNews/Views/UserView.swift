@@ -21,6 +21,7 @@ struct UserView: View {
                 Text("User:")
                     .fontWeight(.semibold)
                 Text(id)
+                Spacer()
             }
             HStack(alignment: .top) {
                 Text("Created:")
@@ -43,16 +44,15 @@ struct UserView: View {
                         .foregroundColor(.secondary)
                 }
             }
-            HStack(alignment: .top) {
-                Text("About:")
-                    .fontWeight(.semibold)
-                if let about = user?.about {
+            if let about = user?.about {
+                HStack(alignment: .top) {
+                    Text("About:")
+                        .fontWeight(.semibold)
                     HTMLView(html: about)
                         .font(.body)
-                } else {
-                    Text("Loading...")
-                        .foregroundColor(.secondary)
                 }
+            } else {
+                Spacer()
             }
         }
         .padding()

@@ -19,44 +19,50 @@ struct StoryView: View {
     
     var body: some View {
         if let text = story.text {
-            ScrollView {
-                Text(text)
-                    .padding()
-            }
+            HTMLView(html: text, textContainerInset: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16))
+                .font(.body)
+                .navigationBarTitle(Text(story.title), displayMode: .inline)
+                .navigationBarItems(trailing: navigationBarItems)
         } else if let url = story.url {
             LoadingView(isShowing: .constant(webViewStore.webView.isLoading)) {
                 WebView(webView: webViewStore.webView)
                     .navigationBarTitle(Text(verbatim: webViewStore.title ?? ""), displayMode: .inline)
-                    .navigationBarItems(trailing: HStack {
-                        Button(action: goBack) {
-                            Image(systemName: "chevron.left")
-                        }.disabled(!webViewStore.canGoBack)
-                        Button(action: goForward) {
-                            Image(systemName: "chevron.right")
-                        }.disabled(!webViewStore.canGoForward)
-                        Button(action: showAuthor) {
-                            Image(systemName: "person.crop.circle.fill")
-                        }
-                        Button(action: showComments) {
-                            Image(systemName: "text.bubble.fill")
-                        }
-                    })
+                    .navigationBarItems(trailing: navigationBarItems)
                     .onAppear {
                         if webViewStore.webView.url != URL(string: url)! {
                             webViewStore.webView.load(URLRequest(url: URL(string: url)!))
                         }
                     }
             }
-            NavigationLink(destination: UserView(id: story.by), isActive: $showingAuthor) {
-                EmptyView()
+        }
+        NavigationLink(destination: UserView(id: story.by), isActive: $showingAuthor) {
+            EmptyView()
+        }
+        .frame(width: 0, height: 0)
+        .disabled(true)
+        NavigationLink(destination: Text("Comments"), isActive: $showingComments) {
+            EmptyView()
+        }
+        .frame(width: 0, height: 0)
+        .disabled(true)
+    }
+    
+    private var navigationBarItems: some View {
+        HStack {
+            if story.url != nil {
+                Button(action: goBack) {
+                    Image(systemName: "chevron.left")
+                }.disabled(!webViewStore.canGoBack)
+                Button(action: goForward) {
+                    Image(systemName: "chevron.right")
+                }.disabled(!webViewStore.canGoForward)
             }
-            .frame(width: 0, height: 0)
-            .disabled(true)
-            NavigationLink(destination: Text("Comments"), isActive: $showingComments) {
-                EmptyView()
+            Button(action: showAuthor) {
+                Image(systemName: "person.crop.circle.fill")
             }
-            .frame(width: 0, height: 0)
-            .disabled(true)
+            Button(action: showComments) {
+                Image(systemName: "text.bubble.fill")
+            }
         }
     }
     

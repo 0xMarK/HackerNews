@@ -11,6 +11,10 @@ struct HTMLView: UIViewRepresentable {
     
     let html: String
     
+    var textContainerInset: UIEdgeInsets = UIEdgeInsets.zero
+    
+    var lineFragmentPadding: CGFloat = 0
+    
     func updateUIView(_ uiView: UITextView, context: UIViewRepresentableContext<Self>) {
         DispatchQueue.main.async {
             var uiFont: UIFont?
@@ -26,8 +30,8 @@ struct HTMLView: UIViewRepresentable {
     
     func makeUIView(context: UIViewRepresentableContext<Self>) -> UITextView {
         let textView = UITextView()
-        textView.textContainerInset = UIEdgeInsets.zero
-        textView.textContainer.lineFragmentPadding = 0
+        textView.textContainerInset = textContainerInset
+        textView.textContainer.lineFragmentPadding = lineFragmentPadding
         return textView
     }
     
