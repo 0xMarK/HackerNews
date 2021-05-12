@@ -19,6 +19,7 @@
 		4D47B4A9264BC9AD0097BE13 /* BestStoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D47B4A8264BC9AD0097BE13 /* BestStoriesView.swift */; };
 		4D47B4AB264BCFD40097BE13 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D47B4AA264BCFD40097BE13 /* StoryView.swift */; };
 		4D47B4AD264BD26D0097BE13 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D47B4AC264BD26D0097BE13 /* WebView.swift */; };
+		4DA68E45264BDB920045EB33 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA68E44264BDB920045EB33 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		4D47B4A8264BC9AD0097BE13 /* BestStoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestStoriesView.swift; sourceTree = "<group>"; };
 		4D47B4AA264BCFD40097BE13 /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
 		4D47B4AC264BD26D0097BE13 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		4DA68E44264BDB920045EB33 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				4D47B4A8264BC9AD0097BE13 /* BestStoriesView.swift */,
+				4DA68E44264BDB920045EB33 /* LoadingView.swift */,
 				4D47B4A6264BC80B0097BE13 /* NewStoriesView.swift */,
 				4D47B49E264ADA070097BE13 /* StoryCellView.swift */,
 				4D47B4AA264BCFD40097BE13 /* StoryView.swift */,
@@ -189,6 +192,7 @@
 				4D47B4AB264BCFD40097BE13 /* StoryView.swift in Sources */,
 				4D47B4AD264BD26D0097BE13 /* WebView.swift in Sources */,
 				4D47B49D264AD1150097BE13 /* APIEnvironmentKey.swift in Sources */,
+				4DA68E45264BDB920045EB33 /* LoadingView.swift in Sources */,
 				4D47B497264ACC340097BE13 /* API.swift in Sources */,
 				4D47B4A9264BC9AD0097BE13 /* BestStoriesView.swift in Sources */,
 				4D47B4A7264BC80B0097BE13 /* NewStoriesView.swift in Sources */,
