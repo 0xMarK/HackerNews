@@ -13,6 +13,10 @@ struct StoryView: View {
     
     @StateObject private var webViewStore = WebViewStore()
     
+    @State private var showingAuthor = false
+    
+    @State private var showingComments = false
+    
     var body: some View {
         if let text = story.text {
             ScrollView {
@@ -26,21 +30,33 @@ struct StoryView: View {
                     .navigationBarItems(trailing: HStack {
                         Button(action: goBack) {
                             Image(systemName: "chevron.left")
-                                .imageScale(.large)
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 32, height: 32)
                         }.disabled(!webViewStore.canGoBack)
                         Button(action: goForward) {
                             Image(systemName: "chevron.right")
-                                .imageScale(.large)
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 32, height: 32)
                         }.disabled(!webViewStore.canGoForward)
+                        Button(action: showAuthor) {
+                            Image(systemName: "person.crop.circle.fill")
+                        }
+                        Button(action: showComments) {
+                            Image(systemName: "text.bubble.fill")
+                        }
                     })
                     .onAppear {
-                        webViewStore.webView.load(URLRequest(url: URL(string: url)!))
+                        if webViewStore.webView.url != URL(string: url)! {
+                            webViewStore.webView.load(URLRequest(url: URL(string: url)!))
+                        }
                     }
             }
+            NavigationLink(destination: Text("Author"), isActive: $showingAuthor) {
+                EmptyView()
+            }
+            .frame(width: 0, height: 0)
+            .disabled(true)
+            NavigationLink(destination: Text("Comments"), isActive: $showingComments) {
+                EmptyView()
+            }
+            .frame(width: 0, height: 0)
+            .disabled(true)
         }
     }
     
@@ -50,6 +66,14 @@ struct StoryView: View {
     
     func goForward() {
         webViewStore.webView.goForward()
+    }
+    
+    func showAuthor() {
+        showingAuthor = true
+    }
+    
+    func showComments() {
+        showingComments = true
     }
     
 }
