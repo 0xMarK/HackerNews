@@ -19,18 +19,21 @@ struct HackerNewsApp: App {
                 .tabItem {
                     Label("Top Stories", systemImage: "1.circle.fill")
                 }
+                .navigationViewStyle(StackNavigationViewStyle()) // Workaround to silence the error
                 NavigationView {
                     NewStoriesView()
                 }
                 .tabItem {
                     Label("New Stories", systemImage: "bolt.fill")
                 }
+                .navigationViewStyle(StackNavigationViewStyle()) // Workaround to silence the error
                 NavigationView {
                     BestStoriesView()
                 }
                 .tabItem {
                     Label("Best Stories", systemImage: "star.fill")
                 }
+                .navigationViewStyle(StackNavigationViewStyle()) // Workaround to silence the error
             }
         }
     }
