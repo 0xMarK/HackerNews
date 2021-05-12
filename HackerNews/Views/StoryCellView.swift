@@ -63,6 +63,7 @@ struct StoryCellView_Previews: PreviewProvider {
     
     static var previews: some View {
         StoryCellView(id: 27115372)
+            .environment(\.api, APIMock())
     }
     
 }

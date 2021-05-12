@@ -37,6 +37,7 @@ struct NewStoriesView_Previews: PreviewProvider {
     
     static var previews: some View {
         NewStoriesView()
+            .environment(\.api, APIMock())
     }
     
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class API {
+class API: APIType {
     
     let baseURL: String = "https://hacker-news.firebaseio.com/v0"
     

@@ -30,6 +30,8 @@
 		4DA68E58264C00000045EB33 /* NSAttributedString+trimming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA68E57264C00000045EB33 /* NSAttributedString+trimming.swift */; };
 		4DA68E5A264C00210045EB33 /* NSMutableAttributedString+trim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA68E59264C00210045EB33 /* NSMutableAttributedString+trim.swift */; };
 		4DA68E5C264C02DA0045EB33 /* UIFont+preferredFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA68E5B264C02DA0045EB33 /* UIFont+preferredFont.swift */; };
+		4DA68E5E264C1D270045EB33 /* APIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA68E5D264C1D270045EB33 /* APIType.swift */; };
+		4DA68E60264C1E310045EB33 /* APIMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA68E5F264C1E310045EB33 /* APIMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		4DA68E57264C00000045EB33 /* NSAttributedString+trimming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+trimming.swift"; sourceTree = "<group>"; };
 		4DA68E59264C00210045EB33 /* NSMutableAttributedString+trim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+trim.swift"; sourceTree = "<group>"; };
 		4DA68E5B264C02DA0045EB33 /* UIFont+preferredFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+preferredFont.swift"; sourceTree = "<group>"; };
+		4DA68E5D264C1D270045EB33 /* APIType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIType.swift; sourceTree = "<group>"; };
+		4DA68E5F264C1E310045EB33 /* APIMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 				4D47B4A0264ADA170097BE13 /* Models */,
 				4D47B496264ACC340097BE13 /* API.swift */,
 				4D47B49C264AD1150097BE13 /* APIEnvironmentKey.swift */,
+				4DA68E5F264C1E310045EB33 /* APIMock.swift */,
+				4DA68E5D264C1D270045EB33 /* APIType.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -231,6 +237,7 @@
 				4D47B4AB264BCFD40097BE13 /* StoryView.swift in Sources */,
 				4D47B4AD264BD26D0097BE13 /* WebView.swift in Sources */,
 				4D47B49D264AD1150097BE13 /* APIEnvironmentKey.swift in Sources */,
+				4DA68E5E264C1D270045EB33 /* APIType.swift in Sources */,
 				4DA68E4D264BFD2B0045EB33 /* HTMLView.swift in Sources */,
 				4DA68E45264BDB920045EB33 /* LoadingView.swift in Sources */,
 				4D47B497264ACC340097BE13 /* API.swift in Sources */,
@@ -248,6 +255,7 @@
 				4D47B4A2264ADA550097BE13 /* Item.swift in Sources */,
 				4DA68E54264BFF740045EB33 /* UIColor+hex.swift in Sources */,
 				4D130FDE264AC37800327A50 /* HackerNewsApp.swift in Sources */,
+				4DA68E60264C1E310045EB33 /* APIMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

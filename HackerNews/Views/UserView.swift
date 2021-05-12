@@ -73,6 +73,7 @@ struct UserView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             UserView(id: "jl")
+                .environment(\.api, APIMock())
         }
     }
     
