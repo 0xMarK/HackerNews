@@ -9,20 +9,23 @@ import Foundation
 
 class APIMock: APIType {
     
-    func item(id: Int, _ completion: @escaping (Result<Item, Error>) -> Void) {
-        let item = Item(
+    class var randomItem: Item {
+        Item(
             by: "anonymous",
             descendants: 10,
             id: 27127316,
             kids: [27128053, 27128112, 27127945, 27127913, 27128097, 27128082, 27128084, 27128062],
             score: 47,
-            text: nil,
+            text: "The text",
             time: 1620800894,
             title: "The story title",
             type: "story",
             url: "https://news.ycombinator.com/"
         )
-        completion(.success(item))
+    }
+    
+    func item(id: Int, _ completion: @escaping (Result<Item, Error>) -> Void) {
+        completion(.success(Self.randomItem))
     }
     
     func topStories(_ completion: @escaping (Result<[Int], Error>) -> Void) {

@@ -21,7 +21,7 @@ struct StoryView: View {
         if let text = story.text {
             HTMLView(html: text, textContainerInset: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16))
                 .font(.body)
-                .navigationBarTitle(Text(story.title), displayMode: .inline)
+                .navigationBarTitle(Text(story.title ?? ""), displayMode: .inline)
                 .navigationBarItems(trailing: navigationBarItems)
         } else if let url = story.url {
             LoadingView(isShowing: .constant(webViewStore.webView.isLoading)) {
@@ -40,7 +40,7 @@ struct StoryView: View {
         }
         .frame(width: 0, height: 0)
         .disabled(true)
-        NavigationLink(destination: Text("Comments"), isActive: $showingComments) {
+        NavigationLink(destination: CommentsView(story: story), isActive: $showingComments) {
             EmptyView()
         }
         .frame(width: 0, height: 0)

@@ -11,9 +11,21 @@ struct HTMLView: UIViewRepresentable {
     
     let html: String
     
-    var textContainerInset: UIEdgeInsets = UIEdgeInsets.zero
+    let textContainerInset: UIEdgeInsets
     
-    var lineFragmentPadding: CGFloat = 0
+    let lineFragmentPadding: CGFloat
+    
+    let isScrollEnabled: Bool
+    
+    @Binding var desiredHeight: CGFloat
+    
+    init(html: String, textContainerInset: UIEdgeInsets = .zero, lineFragmentPadding: CGFloat = 0, isScrollEnabled: Bool = true, desiredHeight: Binding<CGFloat> = .constant(0)) {
+        self.html = html
+        self.textContainerInset = textContainerInset
+        self.lineFragmentPadding = lineFragmentPadding
+        self.isScrollEnabled = isScrollEnabled
+        self._desiredHeight = desiredHeight
+    }
     
     func updateUIView(_ uiView: UITextView, context: UIViewRepresentableContext<Self>) {
         DispatchQueue.main.async {
@@ -25,6 +37,9 @@ struct HTMLView: UIViewRepresentable {
                 uiView.isEditable = false
                 uiView.attributedText = htmlAttributed
             }
+            let maxWidth = uiView.frame.size.width
+            let newSize = uiView.sizeThatFits(CGSize(width: maxWidth, height: .greatestFiniteMagnitude))
+            desiredHeight = ceil(newSize.height)
         }
     }
     
@@ -32,6 +47,7 @@ struct HTMLView: UIViewRepresentable {
         let textView = UITextView()
         textView.textContainerInset = textContainerInset
         textView.textContainer.lineFragmentPadding = lineFragmentPadding
+        textView.isScrollEnabled = isScrollEnabled
         return textView
     }
     

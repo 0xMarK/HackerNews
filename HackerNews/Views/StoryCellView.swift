@@ -21,7 +21,7 @@ struct StoryCellView: View {
                 destination: StoryView(story: item),
                 label: {
                     VStack(alignment: .leading) {
-                        Text(item.title)
+                        Text(item.title ?? "")
                             .font(.headline)
                         HStack {
                             if let date = Date(timeIntervalSince1970: TimeInterval(item.time)) {
@@ -35,7 +35,7 @@ struct StoryCellView: View {
                         .font(.footnote)
                         .foregroundColor(.secondary)
                         HStack {
-                            Text("\(item.score) points")
+                            Text("\(item.score ?? 0) points")
                             if let descendents = item.descendants {
                                 Text("\(descendents) comments")
                             }
