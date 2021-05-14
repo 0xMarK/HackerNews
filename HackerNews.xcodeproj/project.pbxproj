@@ -120,8 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				4D9A4274264DB711009553D6 /* Configuration */,
-				4DA68E4E264BFECD0045EB33 /* Extensions */,
 				4D47B495264ACC100097BE13 /* API */,
+				4DA68E4E264BFECD0045EB33 /* Extensions */,
 				4D47B4A3264AE4790097BE13 /* Views */,
 				4D8E4535264D191A001D0147 /* AppDelegate.swift */,
 				4D130FE1264AC37B00327A50 /* Assets.xcassets */,
@@ -165,17 +165,15 @@
 		4D47B4A3264AE4790097BE13 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4D9C3AA1264EAB8D0052CC0E /* Shared */,
 				4D47B4A8264BC9AD0097BE13 /* BestStoriesView.swift */,
 				4D677F55264C253200DDA38E /* CommentsView.swift */,
 				4D677F57264C2AB400DDA38E /* CommentView.swift */,
-				4DA68E4C264BFD2B0045EB33 /* HTMLView.swift */,
-				4DA68E44264BDB920045EB33 /* LoadingView.swift */,
 				4D47B4A6264BC80B0097BE13 /* NewStoriesView.swift */,
 				4D47B49E264ADA070097BE13 /* StoryCellView.swift */,
 				4D47B4AA264BCFD40097BE13 /* StoryView.swift */,
 				4D47B4A4264AE4B90097BE13 /* TopStoriesView.swift */,
 				4DA68E4A264BE7080045EB33 /* UserView.swift */,
-				4D47B4AC264BD26D0097BE13 /* WebView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,6 +194,16 @@
 				4D9A4275264DB711009553D6 /* Configuration.swift */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		4D9C3AA1264EAB8D0052CC0E /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				4DA68E4C264BFD2B0045EB33 /* HTMLView.swift */,
+				4DA68E44264BDB920045EB33 /* LoadingView.swift */,
+				4D47B4AC264BD26D0097BE13 /* WebView.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		4DA68E4E264BFECD0045EB33 /* Extensions */ = {
