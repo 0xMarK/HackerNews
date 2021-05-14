@@ -20,10 +20,14 @@ struct NewStoriesView: View {
             }
         }
         .navigationTitle("New Stories")
-        .onAppear(perform: loadData)
+        .onAppear(perform: onAppear)
     }
     
-    func loadData() {
+    private func onAppear() {
+        loadData()
+    }
+    
+    private func loadData() {
         api.newStories { result in
             if let itemsArray = try? result.get() {
                 items = itemsArray

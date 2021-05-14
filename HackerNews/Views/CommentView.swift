@@ -40,8 +40,12 @@ struct CommentView: View {
             .padding(.vertical, 8)
         } else {
             ProgressView()
-                .onAppear(perform: loadData)
+                .onAppear(perform: onAppear)
         }
+    }
+    
+    private func onAppear() {
+        loadData()
     }
     
     private func loadData() {

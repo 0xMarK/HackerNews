@@ -57,7 +57,11 @@ struct UserView: View {
         }
         .padding()
         .navigationBarTitle(Text(id))
-        .onAppear(perform: loadData)
+        .onAppear(perform: onAppear)
+    }
+    
+    private func onAppear() {
+        loadData()
     }
     
     private func loadData() {

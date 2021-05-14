@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,14 @@
 		4D47B4AD264BD26D0097BE13 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D47B4AC264BD26D0097BE13 /* WebView.swift */; };
 		4D677F56264C253200DDA38E /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D677F55264C253200DDA38E /* CommentsView.swift */; };
 		4D677F58264C2AB400DDA38E /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D677F57264C2AB400DDA38E /* CommentView.swift */; };
+		4D8E4531264D182C001D0147 /* FlurryAnalyticsSPM in Frameworks */ = {isa = PBXBuildFile; productRef = 4D8E4530264D182C001D0147 /* FlurryAnalyticsSPM */; };
+		4D8E4536264D191A001D0147 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E4535264D191A001D0147 /* AppDelegate.swift */; };
+		4D8E4539264D1BB0001D0147 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8E4538264D1BB0001D0147 /* Security.framework */; };
+		4D8E453A264D1BB7001D0147 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8E4533264D1880001D0147 /* SystemConfiguration.framework */; };
+		4D8E453C264D1BC1001D0147 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8E453B264D1BC1001D0147 /* CoreLocation.framework */; };
+		4D8E4542264D253E001D0147 /* Mixpanel in Frameworks */ = {isa = PBXBuildFile; productRef = 4D8E4541264D253E001D0147 /* Mixpanel */; };
+		4D8E4545264D2A85001D0147 /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 4D8E4544264D2A85001D0147 /* FirebaseAnalyticsSwift-Beta */; };
+		4D9A4276264DB711009553D6 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9A4275264DB711009553D6 /* Configuration.swift */; };
 		4DA68E45264BDB920045EB33 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA68E44264BDB920045EB33 /* LoadingView.swift */; };
 		4DA68E49264BE6000045EB33 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA68E48264BE6000045EB33 /* User.swift */; };
 		4DA68E4B264BE7080045EB33 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA68E4A264BE7080045EB33 /* UserView.swift */; };
@@ -53,6 +61,12 @@
 		4D47B4AC264BD26D0097BE13 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		4D677F55264C253200DDA38E /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
 		4D677F57264C2AB400DDA38E /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
+		4D8E4533264D1880001D0147 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4D8E4535264D191A001D0147 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4D8E4537264D1A46001D0147 /* HackerNews-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HackerNews-Bridging-Header.h"; sourceTree = "<group>"; };
+		4D8E4538264D1BB0001D0147 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		4D8E453B264D1BC1001D0147 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4D9A4275264DB711009553D6 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		4DA68E44264BDB920045EB33 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4DA68E48264BE6000045EB33 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4DA68E4A264BE7080045EB33 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
@@ -73,6 +87,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D8E4545264D2A85001D0147 /* FirebaseAnalyticsSwift-Beta in Frameworks */,
+				4D8E453C264D1BC1001D0147 /* CoreLocation.framework in Frameworks */,
+				4D8E4542264D253E001D0147 /* Mixpanel in Frameworks */,
+				4D8E453A264D1BB7001D0147 /* SystemConfiguration.framework in Frameworks */,
+				4D8E4539264D1BB0001D0147 /* Security.framework in Frameworks */,
+				4D8E4531264D182C001D0147 /* FlurryAnalyticsSPM in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +104,7 @@
 			children = (
 				4D130FDC264AC37800327A50 /* HackerNews */,
 				4D130FDB264AC37800327A50 /* Products */,
+				4D8E4532264D1880001D0147 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,10 +119,13 @@
 		4D130FDC264AC37800327A50 /* HackerNews */ = {
 			isa = PBXGroup;
 			children = (
+				4D9A4274264DB711009553D6 /* Configuration */,
 				4DA68E4E264BFECD0045EB33 /* Extensions */,
 				4D47B495264ACC100097BE13 /* API */,
 				4D47B4A3264AE4790097BE13 /* Views */,
+				4D8E4535264D191A001D0147 /* AppDelegate.swift */,
 				4D130FE1264AC37B00327A50 /* Assets.xcassets */,
+				4D8E4537264D1A46001D0147 /* HackerNews-Bridging-Header.h */,
 				4D130FDD264AC37800327A50 /* HackerNewsApp.swift */,
 				4D130FE6264AC37B00327A50 /* Info.plist */,
 				4D130FE3264AC37B00327A50 /* Preview Content */,
@@ -156,6 +180,24 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		4D8E4532264D1880001D0147 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D8E453B264D1BC1001D0147 /* CoreLocation.framework */,
+				4D8E4538264D1BB0001D0147 /* Security.framework */,
+				4D8E4533264D1880001D0147 /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D9A4274264DB711009553D6 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				4D9A4275264DB711009553D6 /* Configuration.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		4DA68E4E264BFECD0045EB33 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +228,11 @@
 			dependencies = (
 			);
 			name = HackerNews;
+			packageProductDependencies = (
+				4D8E4530264D182C001D0147 /* FlurryAnalyticsSPM */,
+				4D8E4541264D253E001D0147 /* Mixpanel */,
+				4D8E4544264D2A85001D0147 /* FirebaseAnalyticsSwift-Beta */,
+			);
 			productName = HackerNews;
 			productReference = 4D130FDA264AC37800327A50 /* HackerNews.app */;
 			productType = "com.apple.product-type.application";
@@ -213,6 +260,11 @@
 				Base,
 			);
 			mainGroup = 4D130FD1264AC37800327A50;
+			packageReferences = (
+				4D8E452F264D182C001D0147 /* XCRemoteSwiftPackageReference "FlurrySwiftPackage" */,
+				4D8E4540264D253E001D0147 /* XCRemoteSwiftPackageReference "mixpanel-swift" */,
+				4D8E4543264D2A85001D0147 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 4D130FDB264AC37800327A50 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -247,6 +299,7 @@
 				4DA68E4D264BFD2B0045EB33 /* HTMLView.swift in Sources */,
 				4DA68E45264BDB920045EB33 /* LoadingView.swift in Sources */,
 				4D47B497264ACC340097BE13 /* API.swift in Sources */,
+				4D8E4536264D191A001D0147 /* AppDelegate.swift in Sources */,
 				4DA68E50264BFEDE0045EB33 /* String+HTML.swift in Sources */,
 				4D47B4A9264BC9AD0097BE13 /* BestStoriesView.swift in Sources */,
 				4DA68E5C264C02DA0045EB33 /* UIFont+preferredFont.swift in Sources */,
@@ -259,6 +312,7 @@
 				4DA68E52264BFF420045EB33 /* UIFont+isSystemFont.swift in Sources */,
 				4D677F58264C2AB400DDA38E /* CommentView.swift in Sources */,
 				4DA68E58264C00000045EB33 /* NSAttributedString+trimming.swift in Sources */,
+				4D9A4276264DB711009553D6 /* Configuration.swift in Sources */,
 				4DA68E4B264BE7080045EB33 /* UserView.swift in Sources */,
 				4D47B4A2264ADA550097BE13 /* Item.swift in Sources */,
 				4DA68E54264BFF740045EB33 /* UIColor+hex.swift in Sources */,
@@ -404,6 +458,7 @@
 				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mark.HackerNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HackerNews/HackerNews-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -427,6 +482,7 @@
 				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mark.HackerNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HackerNews/HackerNews-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -454,6 +510,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4D8E452F264D182C001D0147 /* XCRemoteSwiftPackageReference "FlurrySwiftPackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/flurrydev/FlurrySwiftPackage/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.2.0;
+			};
+		};
+		4D8E4540264D253E001D0147 /* XCRemoteSwiftPackageReference "mixpanel-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mixpanel/mixpanel-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.3;
+			};
+		};
+		4D8E4543264D2A85001D0147 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4D8E4530264D182C001D0147 /* FlurryAnalyticsSPM */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D8E452F264D182C001D0147 /* XCRemoteSwiftPackageReference "FlurrySwiftPackage" */;
+			productName = FlurryAnalyticsSPM;
+		};
+		4D8E4541264D253E001D0147 /* Mixpanel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D8E4540264D253E001D0147 /* XCRemoteSwiftPackageReference "mixpanel-swift" */;
+			productName = Mixpanel;
+		};
+		4D8E4544264D2A85001D0147 /* FirebaseAnalyticsSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D8E4543264D2A85001D0147 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAnalyticsSwift-Beta";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4D130FD2264AC37800327A50 /* Project object */;
 }

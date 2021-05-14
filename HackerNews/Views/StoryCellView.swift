@@ -47,8 +47,12 @@ struct StoryCellView: View {
             )
         } else {
             ProgressView()
-                .onAppear(perform: loadData)
+                .onAppear(perform: onAppear)
         }
+    }
+    
+    private func onAppear() {
+        loadData()
     }
     
     private func loadData() {

@@ -20,10 +20,14 @@ struct BestStoriesView: View {
             }
         }
         .navigationTitle("Best Stories")
-        .onAppear(perform: loadData)
+        .onAppear(perform: onAppear)
     }
     
-    func loadData() {
+    private func onAppear() {
+        loadData()
+    }
+    
+    private func loadData() {
         api.bestStories { result in
             if let itemsArray = try? result.get() {
                 items = itemsArray

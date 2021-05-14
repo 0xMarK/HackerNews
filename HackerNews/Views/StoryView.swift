@@ -23,6 +23,7 @@ struct StoryView: View {
                 .font(.body)
                 .navigationBarTitle(Text(story.title ?? ""), displayMode: .inline)
                 .navigationBarItems(trailing: navigationBarItems)
+                .onAppear(perform: onAppear)
         } else if let url = story.url {
             LoadingView(isShowing: .constant(webViewStore.webView.isLoading)) {
                 WebView(webView: webViewStore.webView)
@@ -34,6 +35,7 @@ struct StoryView: View {
                         }
                     }
             }
+            .onAppear(perform: onAppear)
         }
         NavigationLink(destination: UserView(id: story.by), isActive: $showingAuthor) {
             EmptyView()
@@ -45,6 +47,9 @@ struct StoryView: View {
         }
         .frame(width: 0, height: 0)
         .disabled(true)
+    }
+    
+    private func onAppear() {
     }
     
     private var navigationBarItems: some View {
@@ -66,19 +71,19 @@ struct StoryView: View {
         }
     }
     
-    func goBack() {
+    private func goBack() {
         webViewStore.webView.goBack()
     }
     
-    func goForward() {
+    private func goForward() {
         webViewStore.webView.goForward()
     }
     
-    func showAuthor() {
+    private func showAuthor() {
         showingAuthor = true
     }
     
-    func showComments() {
+    private func showComments() {
         showingComments = true
     }
     
@@ -87,7 +92,7 @@ struct StoryView: View {
 struct StoryView_Previews: PreviewProvider {
     
     static var previews: some View {
-        StoryView(story: Item(by: "Author", descendants: 0, id: 0, kids: nil, score: 0, text: "Text", time: 0, title: "Title", type: "story", url: nil))
+        StoryView(story: APIMock.randomItem)
     }
     
 }
