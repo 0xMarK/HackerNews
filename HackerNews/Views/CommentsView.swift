@@ -20,11 +20,16 @@ struct CommentsView: View {
                     CommentView(id: id)
                 }
             }
+            .onAppear(perform: onAppear)
             .navigationTitle("Comments")
         } else {
             Text("No comments")
+                .onAppear(perform: onAppear)
                 .navigationTitle("Comments")
         }
+    }
+    
+    private func onAppear() {
     }
     
 }

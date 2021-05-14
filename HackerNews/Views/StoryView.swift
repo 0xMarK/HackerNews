@@ -37,7 +37,7 @@ struct StoryView: View {
             }
             .onAppear(perform: onAppear)
         }
-        NavigationLink(destination: UserView(id: story.by), isActive: $showingAuthor) {
+        NavigationLink(destination: UserView(id: story.by ?? ""), isActive: $showingAuthor) {
             EmptyView()
         }
         .frame(width: 0, height: 0)
@@ -62,8 +62,10 @@ struct StoryView: View {
                     Image(systemName: "chevron.right")
                 }.disabled(!webViewStore.canGoForward)
             }
-            Button(action: showAuthor) {
-                Image(systemName: "person.crop.circle.fill")
+            if story.by != nil {
+                Button(action: showAuthor) {
+                    Image(systemName: "person.crop.circle.fill")
+                }
             }
             Button(action: showComments) {
                 Image(systemName: "text.bubble.fill")

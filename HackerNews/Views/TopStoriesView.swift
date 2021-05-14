@@ -13,6 +13,8 @@ struct TopStoriesView: View {
     
     @State var items: [Int] = []
     
+    @State private var didAppearTimeInterval: TimeInterval = 0
+    
     var body: some View {
         List {
             ForEach(items, id: \.self) { id in
@@ -24,7 +26,11 @@ struct TopStoriesView: View {
     }
     
     private func onAppear() {
-        loadData()
+        // Workaround: not to be called 2 times on app start
+        if Date().timeIntervalSince1970 - didAppearTimeInterval > 0.5 {
+            loadData()
+        }
+        didAppearTimeInterval = Date().timeIntervalSince1970
     }
     
     private func loadData() {

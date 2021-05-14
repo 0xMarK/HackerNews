@@ -15,6 +15,8 @@ struct StoryCellView: View {
     
     @State var item: Item?
     
+    @State private var didAppearTimeInterval: TimeInterval = 0
+    
     var body: some View {
         if let item = item {
             NavigationLink(
@@ -30,7 +32,9 @@ struct StoryCellView: View {
                                     Text("ago")
                                 }
                             }
-                            Text("by \(item.by)")
+                            if let author = item.by {
+                                Text("by \(author)")
+                            }
                         }
                         .font(.footnote)
                         .foregroundColor(.secondary)
@@ -52,7 +56,11 @@ struct StoryCellView: View {
     }
     
     private func onAppear() {
-        loadData()
+        // Workaround: not to be called too often
+        if Date().timeIntervalSince1970 - didAppearTimeInterval > 0.5 {
+            loadData()
+        }
+        didAppearTimeInterval = Date().timeIntervalSince1970
     }
     
     private func loadData() {

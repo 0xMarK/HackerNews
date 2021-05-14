@@ -9,9 +9,11 @@ import Foundation
 
 struct Item: Codable {
     
-    let by: String
+    let by: String?
     let descendants: Int?
+    let deleted: Bool?
     let id: Int
+    let parent: Int?
     let kids: [Int]?
     let score: Int?
     let text: String?

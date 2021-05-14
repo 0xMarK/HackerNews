@@ -11,6 +11,8 @@ struct BestStoriesView: View {
     
     @Environment(\.api) private var api
     
+    @State private var didAppearTimeInterval: TimeInterval = 0
+    
     @State var items: [Int] = []
     
     var body: some View {
@@ -24,7 +26,11 @@ struct BestStoriesView: View {
     }
     
     private func onAppear() {
-        loadData()
+        // Workaround: not to be called 2 times on app start
+        if Date().timeIntervalSince1970 - didAppearTimeInterval > 0.5 {
+            loadData()
+        }
+        didAppearTimeInterval = Date().timeIntervalSince1970
     }
     
     private func loadData() {

@@ -17,13 +17,17 @@ struct CommentView: View {
     
     @State private var desiredHeight: CGFloat = 50
     
+    @State private var didAppearTimeInterval: TimeInterval = 0
+    
     var body: some View {
         if let item = item {
             VStack(alignment: .leading) {
                 HStack(alignment: .lastTextBaseline) {
-                    Image(systemName: "person.crop.circle.fill")
-                    Text(item.by)
-                        .fontWeight(.medium)
+                    if let author = item.by {
+                        Image(systemName: "person.crop.circle.fill")
+                        Text(author)
+                            .fontWeight(.medium)
+                    }
                     if let date = Date(timeIntervalSince1970: TimeInterval(item.time)) {
                         HStack(spacing: 4) {
                             Text(date, style: .relative)
@@ -33,9 +37,14 @@ struct CommentView: View {
                         .foregroundColor(.secondary)
                     }
                 }
-                HTMLView(html: item.text ?? "", desiredHeight: $desiredHeight)
-                    .font(.body)
-                    .frame(minHeight: desiredHeight)
+                if item.deleted ?? false {
+                    Text("Deleted")
+                        .foregroundColor(.secondary)
+                } else {
+                    HTMLView(html: item.text ?? "", desiredHeight: $desiredHeight)
+                        .font(.body)
+                        .frame(minHeight: desiredHeight)
+                }
             }
             .padding(.vertical, 8)
         } else {
@@ -45,7 +54,11 @@ struct CommentView: View {
     }
     
     private func onAppear() {
-        loadData()
+        // Workaround: not to be called too often
+        if Date().timeIntervalSince1970 - didAppearTimeInterval > 0.5 {
+            loadData()
+        }
+        didAppearTimeInterval = Date().timeIntervalSince1970
     }
     
     private func loadData() {

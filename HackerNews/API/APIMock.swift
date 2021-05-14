@@ -13,7 +13,9 @@ class APIMock: APIType {
         Item(
             by: "anonymous",
             descendants: 10,
+            deleted: nil,
             id: 27127316,
+            parent: nil,
             kids: [27128053, 27128112, 27127945, 27127913, 27128097, 27128082, 27128084, 27128062],
             score: 47,
             text: "The text",
