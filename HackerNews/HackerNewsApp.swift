@@ -12,6 +12,8 @@ struct HackerNewsApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
+    @Environment(\.scenePhase) var scenePhase
+    
     var body: some Scene {
         WindowGroup {
             TabView {
@@ -37,6 +39,15 @@ struct HackerNewsApp: App {
                 }
                 .navigationViewStyle(StackNavigationViewStyle()) // Workaround to silence the error
             }
+            .onChange(of: scenePhase) { newScenePhase in
+                switch newScenePhase {
+                case .active:
+                    appDelegate.analyticsCenter.track(.appOpen)
+                default:
+                    break
+                }
+            }
+            .environment(\.analytics, appDelegate.analyticsCenter)
         }
     }
     

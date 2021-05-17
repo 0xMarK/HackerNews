@@ -20,6 +20,8 @@ enum Configuration {
     
     enum Flurry {
         static let apiKey = "BF6MXXXXXXXXXXXXWP75"
+        static let isCrashReportingEnabled = true
+        static let logLevel = FlurryAnalyticsService.LogLevel.criticalOnly
     }
     
     enum Mixpanel {

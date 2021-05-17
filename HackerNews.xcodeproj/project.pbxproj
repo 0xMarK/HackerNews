@@ -10,6 +10,14 @@
 		4D130FDE264AC37800327A50 /* HackerNewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D130FDD264AC37800327A50 /* HackerNewsApp.swift */; };
 		4D130FE2264AC37B00327A50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D130FE1264AC37B00327A50 /* Assets.xcassets */; };
 		4D130FE5264AC37B00327A50 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D130FE4264AC37B00327A50 /* Preview Assets.xcassets */; };
+		4D37FD0E264FC7E60097656D /* AnalyticsCenterEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D37FD06264FC7E60097656D /* AnalyticsCenterEnvironmentKey.swift */; };
+		4D37FD0F264FC7E60097656D /* AnalyticsCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D37FD07264FC7E60097656D /* AnalyticsCenter.swift */; };
+		4D37FD10264FC7E60097656D /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D37FD08264FC7E60097656D /* AnalyticsEvent.swift */; };
+		4D37FD11264FC7E60097656D /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D37FD09264FC7E60097656D /* AnalyticsService.swift */; };
+		4D37FD12264FC7E60097656D /* FlurryAnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D37FD0B264FC7E60097656D /* FlurryAnalyticsService.swift */; };
+		4D37FD13264FC7E60097656D /* MixpanelAnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D37FD0C264FC7E60097656D /* MixpanelAnalyticsService.swift */; };
+		4D37FD14264FC7E60097656D /* FirebaseAnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D37FD0D264FC7E60097656D /* FirebaseAnalyticsService.swift */; };
+		4D37FD182652559C0097656D /* String+capitalizeFirstLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D37FD172652559C0097656D /* String+capitalizeFirstLetter.swift */; };
 		4D47B497264ACC340097BE13 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D47B496264ACC340097BE13 /* API.swift */; };
 		4D47B49D264AD1150097BE13 /* APIEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D47B49C264AD1150097BE13 /* APIEnvironmentKey.swift */; };
 		4D47B49F264ADA070097BE13 /* StoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D47B49E264ADA070097BE13 /* StoryCellView.swift */; };
@@ -50,6 +58,14 @@
 		4D130FE1264AC37B00327A50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D130FE4264AC37B00327A50 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4D130FE6264AC37B00327A50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D37FD06264FC7E60097656D /* AnalyticsCenterEnvironmentKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsCenterEnvironmentKey.swift; sourceTree = "<group>"; };
+		4D37FD07264FC7E60097656D /* AnalyticsCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsCenter.swift; sourceTree = "<group>"; };
+		4D37FD08264FC7E60097656D /* AnalyticsEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
+		4D37FD09264FC7E60097656D /* AnalyticsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
+		4D37FD0B264FC7E60097656D /* FlurryAnalyticsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlurryAnalyticsService.swift; sourceTree = "<group>"; };
+		4D37FD0C264FC7E60097656D /* MixpanelAnalyticsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MixpanelAnalyticsService.swift; sourceTree = "<group>"; };
+		4D37FD0D264FC7E60097656D /* FirebaseAnalyticsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAnalyticsService.swift; sourceTree = "<group>"; };
+		4D37FD172652559C0097656D /* String+capitalizeFirstLetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+capitalizeFirstLetter.swift"; sourceTree = "<group>"; };
 		4D47B496264ACC340097BE13 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		4D47B49C264AD1150097BE13 /* APIEnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironmentKey.swift; sourceTree = "<group>"; };
 		4D47B49E264ADA070097BE13 /* StoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCellView.swift; sourceTree = "<group>"; };
@@ -120,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				4D9A4274264DB711009553D6 /* Configuration */,
+				4D37FD05264FC7E60097656D /* Analytics */,
 				4D47B495264ACC100097BE13 /* API */,
 				4DA68E4E264BFECD0045EB33 /* Extensions */,
 				4D47B4A3264AE4790097BE13 /* Views */,
@@ -139,6 +156,28 @@
 				4D130FE4264AC37B00327A50 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4D37FD05264FC7E60097656D /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				4D37FD0A264FC7E60097656D /* Services */,
+				4D37FD06264FC7E60097656D /* AnalyticsCenterEnvironmentKey.swift */,
+				4D37FD07264FC7E60097656D /* AnalyticsCenter.swift */,
+				4D37FD08264FC7E60097656D /* AnalyticsEvent.swift */,
+				4D37FD09264FC7E60097656D /* AnalyticsService.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		4D37FD0A264FC7E60097656D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4D37FD0D264FC7E60097656D /* FirebaseAnalyticsService.swift */,
+				4D37FD0B264FC7E60097656D /* FlurryAnalyticsService.swift */,
+				4D37FD0C264FC7E60097656D /* MixpanelAnalyticsService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		4D47B495264ACC100097BE13 /* API */ = {
@@ -212,6 +251,7 @@
 				4DA68E55264BFFB20045EB33 /* Locale+isRTL.swift */,
 				4DA68E57264C00000045EB33 /* NSAttributedString+trimming.swift */,
 				4DA68E59264C00210045EB33 /* NSMutableAttributedString+trim.swift */,
+				4D37FD172652559C0097656D /* String+capitalizeFirstLetter.swift */,
 				4DA68E4F264BFEDE0045EB33 /* String+HTML.swift */,
 				4DA68E53264BFF740045EB33 /* UIColor+hex.swift */,
 				4DA68E51264BFF420045EB33 /* UIFont+isSystemFont.swift */,
@@ -302,13 +342,17 @@
 				4DA68E5A264C00210045EB33 /* NSMutableAttributedString+trim.swift in Sources */,
 				4D47B4AB264BCFD40097BE13 /* StoryView.swift in Sources */,
 				4D47B4AD264BD26D0097BE13 /* WebView.swift in Sources */,
+				4D37FD13264FC7E60097656D /* MixpanelAnalyticsService.swift in Sources */,
 				4D47B49D264AD1150097BE13 /* APIEnvironmentKey.swift in Sources */,
 				4DA68E5E264C1D270045EB33 /* APIType.swift in Sources */,
 				4DA68E4D264BFD2B0045EB33 /* HTMLView.swift in Sources */,
 				4DA68E45264BDB920045EB33 /* LoadingView.swift in Sources */,
+				4D37FD11264FC7E60097656D /* AnalyticsService.swift in Sources */,
+				4D37FD14264FC7E60097656D /* FirebaseAnalyticsService.swift in Sources */,
 				4D47B497264ACC340097BE13 /* API.swift in Sources */,
 				4D8E4536264D191A001D0147 /* AppDelegate.swift in Sources */,
 				4DA68E50264BFEDE0045EB33 /* String+HTML.swift in Sources */,
+				4D37FD0F264FC7E60097656D /* AnalyticsCenter.swift in Sources */,
 				4D47B4A9264BC9AD0097BE13 /* BestStoriesView.swift in Sources */,
 				4DA68E5C264C02DA0045EB33 /* UIFont+preferredFont.swift in Sources */,
 				4D47B4A7264BC80B0097BE13 /* NewStoriesView.swift in Sources */,
@@ -317,13 +361,17 @@
 				4D677F56264C253200DDA38E /* CommentsView.swift in Sources */,
 				4DA68E49264BE6000045EB33 /* User.swift in Sources */,
 				4D47B49F264ADA070097BE13 /* StoryCellView.swift in Sources */,
+				4D37FD12264FC7E60097656D /* FlurryAnalyticsService.swift in Sources */,
 				4DA68E52264BFF420045EB33 /* UIFont+isSystemFont.swift in Sources */,
+				4D37FD182652559C0097656D /* String+capitalizeFirstLetter.swift in Sources */,
 				4D677F58264C2AB400DDA38E /* CommentView.swift in Sources */,
 				4DA68E58264C00000045EB33 /* NSAttributedString+trimming.swift in Sources */,
+				4D37FD0E264FC7E60097656D /* AnalyticsCenterEnvironmentKey.swift in Sources */,
 				4D9A4276264DB711009553D6 /* Configuration.swift in Sources */,
 				4DA68E4B264BE7080045EB33 /* UserView.swift in Sources */,
 				4D47B4A2264ADA550097BE13 /* Item.swift in Sources */,
 				4DA68E54264BFF740045EB33 /* UIColor+hex.swift in Sources */,
+				4D37FD10264FC7E60097656D /* AnalyticsEvent.swift in Sources */,
 				4D130FDE264AC37800327A50 /* HackerNewsApp.swift in Sources */,
 				4DA68E60264C1E310045EB33 /* APIMock.swift in Sources */,
 			);

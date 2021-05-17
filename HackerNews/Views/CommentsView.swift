@@ -11,6 +11,8 @@ struct CommentsView: View {
     
     @Environment(\.api) private var api
     
+    @Environment(\.analytics) private var analytics
+    
     let story: Item
     
     var body: some View {
@@ -30,6 +32,7 @@ struct CommentsView: View {
     }
     
     private func onAppear() {
+        analytics.track(.selectContent(contentType: "comments", itemID: "\(story.id)"))
     }
     
 }

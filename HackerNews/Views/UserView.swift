@@ -11,6 +11,8 @@ struct UserView: View {
     
     @Environment(\.api) private var api
     
+    @Environment(\.analytics) private var analytics
+    
     @State var id: String
     
     @State var user: User?
@@ -61,6 +63,7 @@ struct UserView: View {
     }
     
     private func onAppear() {
+        analytics.track(.selectContent(contentType: "user", itemID: "\(id)"))
         loadData()
     }
     

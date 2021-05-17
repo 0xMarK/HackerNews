@@ -9,6 +9,8 @@ import SwiftUI
 
 struct StoryView: View {
     
+    @Environment(\.analytics) private var analytics
+    
     @State var story: Item
     
     @StateObject private var webViewStore = WebViewStore()
@@ -50,6 +52,7 @@ struct StoryView: View {
     }
     
     private func onAppear() {
+        analytics.track(.selectContent(contentType: "story", itemID: "\(story.id)"))
     }
     
     private var navigationBarItems: some View {

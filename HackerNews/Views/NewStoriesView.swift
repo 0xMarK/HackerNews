@@ -11,6 +11,8 @@ struct NewStoriesView: View {
     
     @Environment(\.api) private var api
     
+    @Environment(\.analytics) private var analytics
+    
     @State private var didAppearTimeInterval: TimeInterval = 0
     
     @State var items: [Int] = []
@@ -28,6 +30,7 @@ struct NewStoriesView: View {
     private func onAppear() {
         // Workaround: not to be called 2 times on app start
         if Date().timeIntervalSince1970 - didAppearTimeInterval > 0.5 {
+            analytics.track(.screenView(screenClass: nil, screenName: "New Stories"))
             loadData()
         }
         didAppearTimeInterval = Date().timeIntervalSince1970

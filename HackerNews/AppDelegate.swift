@@ -12,18 +12,25 @@ import Firebase
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     
+    let analyticsCenter = AnalyticsCenter()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        let firebaseOptions = FirebaseOptions(googleAppID: Configuration.Firebase.googleAppID, gcmSenderID: Configuration.Firebase.gcmSenderID)
-        firebaseOptions.apiKey = Configuration.Firebase.apiKey
-        firebaseOptions.projectID = Configuration.Firebase.projectID
-        firebaseOptions.clientID = Configuration.Firebase.clientID
-        firebaseOptions.storageBucket = Configuration.Firebase.storageBucket
-        FirebaseApp.configure(options: firebaseOptions)
-        Flurry.startSession(Configuration.Flurry.apiKey, with: FlurrySessionBuilder
-              .init()
-              .withCrashReporting(true)
-              .withLogLevel(FlurryLogLevelAll))
-        Mixpanel.initialize(token: Configuration.Mixpanel.apiToken)
+        analyticsCenter.add(FirebaseAnalyticsService(
+            googleAppID: Configuration.Firebase.googleAppID,
+            gcmSenderID: Configuration.Firebase.gcmSenderID,
+            apiKey: Configuration.Firebase.apiKey,
+            bundleID: nil,
+            projectID: Configuration.Firebase.projectID,
+            clientID: Configuration.Firebase.clientID,
+            storageBucket: Configuration.Firebase.storageBucket
+        ))
+        analyticsCenter.add(FlurryAnalyticsService(
+            apiKey: Configuration.Flurry.apiKey,
+            logLevel: Configuration.Flurry.logLevel,
+            isCrashReportingEnabled: Configuration.Flurry.isCrashReportingEnabled
+        ))
+        analyticsCenter.add(MixpanelAnalyticsService(apiToken: Configuration.Mixpanel.apiToken))
+        analyticsCenter.start()
         return true
     }
     
