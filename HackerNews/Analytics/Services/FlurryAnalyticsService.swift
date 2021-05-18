@@ -22,6 +22,8 @@ struct FlurryAnalyticsService: AnalyticsService {
     
     let isCrashReportingEnabled: Bool
     
+    let eventNameFormatter: AnalyticsEventNameFormatter?
+    
     func start() {
         Flurry.startSession(apiKey, with: FlurrySessionBuilder
               .init()
@@ -30,7 +32,8 @@ struct FlurryAnalyticsService: AnalyticsService {
     }
     
     func track(_ event: AnalyticsEvent) {
-        Flurry.logEvent(event.snakeCaseName, withParameters: event.parameters)
+        let name = eventNameFormatter?.format(event.name) ?? event.name
+        Flurry.logEvent(name, withParameters: event.parameters)
     }
     
 }

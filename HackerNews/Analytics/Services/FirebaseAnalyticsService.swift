@@ -23,6 +23,8 @@ struct FirebaseAnalyticsService: AnalyticsService {
     
     let storageBucket: String
     
+    let eventNameFormatter: AnalyticsEventNameFormatter?
+    
     func start() {
         let firebaseOptions = FirebaseOptions(googleAppID: googleAppID, gcmSenderID: gcmSenderID)
         firebaseOptions.apiKey = apiKey
@@ -36,7 +38,8 @@ struct FirebaseAnalyticsService: AnalyticsService {
     }
     
     func track(_ event: AnalyticsEvent) {
-        Analytics.logEvent(event.snakeCaseName, parameters: event.parameters)
+        let name = eventNameFormatter?.format(event.name) ?? event.name
+        Analytics.logEvent(name, parameters: event.parameters)
     }
     
 }

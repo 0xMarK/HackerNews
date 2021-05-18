@@ -22,14 +22,19 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             bundleID: nil,
             projectID: Configuration.Firebase.projectID,
             clientID: Configuration.Firebase.clientID,
-            storageBucket: Configuration.Firebase.storageBucket
+            storageBucket: Configuration.Firebase.storageBucket,
+            eventNameFormatter: EventNameFormatter(format: .snakeCase)
         ))
         analyticsCenter.add(FlurryAnalyticsService(
             apiKey: Configuration.Flurry.apiKey,
             logLevel: Configuration.Flurry.logLevel,
-            isCrashReportingEnabled: Configuration.Flurry.isCrashReportingEnabled
+            isCrashReportingEnabled: Configuration.Flurry.isCrashReportingEnabled,
+            eventNameFormatter: EventNameFormatter(format: .snakeCase)
         ))
-        analyticsCenter.add(MixpanelAnalyticsService(apiToken: Configuration.Mixpanel.apiToken))
+        analyticsCenter.add(MixpanelAnalyticsService(
+            apiToken: Configuration.Mixpanel.apiToken,
+            eventNameFormatter: EventNameFormatter(format: .capitalized)
+        ))
         analyticsCenter.start()
         return true
     }

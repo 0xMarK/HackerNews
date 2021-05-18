@@ -63,7 +63,7 @@ struct UserView: View {
     }
     
     private func onAppear() {
-        analytics.track(.selectContent(contentType: "user", itemID: "\(id)"))
+        analytics.track(AnalyticsEventEnum.selectContent(contentType: "user", itemID: "\(id)"))
         loadData()
     }
     

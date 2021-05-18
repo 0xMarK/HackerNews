@@ -32,7 +32,7 @@ struct CommentsView: View {
     }
     
     private func onAppear() {
-        analytics.track(.selectContent(contentType: "comments", itemID: "\(story.id)"))
+        analytics.track(AnalyticsEventEnum.selectContent(contentType: "comments", itemID: "\(story.id)"))
     }
     
 }
