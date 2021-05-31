@@ -6,6 +6,7 @@
 //
 
 import Firebase
+import AnalyticsCenter
 
 struct FirebaseAnalyticsService: AnalyticsService {
     

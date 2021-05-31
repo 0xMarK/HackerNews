@@ -5,7 +5,7 @@
 //  Created by Anton Kaliuzhnyi on 18.05.2021.
 //
 
-import Foundation
+import AnalyticsCenter
 
 enum AnalyticsEventEnum {
     
@@ -35,7 +35,7 @@ extension AnalyticsEventEnum: AnalyticsEvent {
         return String(String(describing: self)[range])
     }
     
-    var parameters: [String: Any] {
+    var parameters: [String: Any]? {
         var parameters: [String: Any] = [:]
         if let firstChild = Mirror(reflecting: self).children.first {
             for childOfValue in Mirror(reflecting: firstChild.value).children {

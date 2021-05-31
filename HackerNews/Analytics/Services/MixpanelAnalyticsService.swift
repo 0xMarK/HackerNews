@@ -6,6 +6,7 @@
 //
 
 import Mixpanel
+import AnalyticsCenter
 
 struct MixpanelAnalyticsService: AnalyticsService {
     
@@ -18,7 +19,7 @@ struct MixpanelAnalyticsService: AnalyticsService {
     }
     
     func track(_ event: AnalyticsEvent) {
-        let mixpanelProperties = event.parameters.compactMapValues { $0 as? MixpanelType }
+        let mixpanelProperties = event.parameters?.compactMapValues { $0 as? MixpanelType }
         let name = eventNameFormatter?.format(event.name) ?? event.name
         Mixpanel.mainInstance().track(event: name, properties: mixpanelProperties)
     }

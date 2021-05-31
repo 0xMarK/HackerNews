@@ -9,6 +9,7 @@ import UIKit
 import FlurryAnalytics
 import Mixpanel
 import Firebase
+import AnalyticsCenter
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     

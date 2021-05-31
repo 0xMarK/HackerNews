@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AnalyticsCenter
 
 struct AnalyticsCenterEnvironmentKey: EnvironmentKey {
     

@@ -6,6 +6,7 @@
 //
 
 import FlurryAnalytics
+import AnalyticsCenter
 
 struct FlurryAnalyticsService: AnalyticsService {
     
