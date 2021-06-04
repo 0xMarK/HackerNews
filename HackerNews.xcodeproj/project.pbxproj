@@ -26,7 +26,7 @@
 		4D47B4AD264BD26D0097BE13 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D47B4AC264BD26D0097BE13 /* WebView.swift */; };
 		4D677F56264C253200DDA38E /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D677F55264C253200DDA38E /* CommentsView.swift */; };
 		4D677F58264C2AB400DDA38E /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D677F57264C2AB400DDA38E /* CommentView.swift */; };
-		4D67F3F226537E8B0065F46D /* AnalyticsEventEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D67F3F126537E8B0065F46D /* AnalyticsEventEnum.swift */; };
+		4D67F3F226537E8B0065F46D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D67F3F126537E8B0065F46D /* Event.swift */; };
 		4D8E4531264D182C001D0147 /* FlurryAnalyticsSPM in Frameworks */ = {isa = PBXBuildFile; productRef = 4D8E4530264D182C001D0147 /* FlurryAnalyticsSPM */; };
 		4D8E4536264D191A001D0147 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E4535264D191A001D0147 /* AppDelegate.swift */; };
 		4D8E4539264D1BB0001D0147 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8E4538264D1BB0001D0147 /* Security.framework */; };
@@ -73,7 +73,7 @@
 		4D47B4AC264BD26D0097BE13 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		4D677F55264C253200DDA38E /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
 		4D677F57264C2AB400DDA38E /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
-		4D67F3F126537E8B0065F46D /* AnalyticsEventEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEventEnum.swift; sourceTree = "<group>"; };
+		4D67F3F126537E8B0065F46D /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		4D8E4533264D1880001D0147 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4D8E4535264D191A001D0147 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D8E4537264D1A46001D0147 /* HackerNews-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HackerNews-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 			children = (
 				4D37FD0A264FC7E60097656D /* Services */,
 				4D37FD06264FC7E60097656D /* AnalyticsCenterEnvironmentKey.swift */,
-				4D67F3F126537E8B0065F46D /* AnalyticsEventEnum.swift */,
+				4D67F3F126537E8B0065F46D /* Event.swift */,
 			);
 			path = Analytics;
 			sourceTree = "<group>";
@@ -346,7 +346,7 @@
 				4DA68E4D264BFD2B0045EB33 /* HTMLView.swift in Sources */,
 				4DA68E45264BDB920045EB33 /* LoadingView.swift in Sources */,
 				4D37FD14264FC7E60097656D /* FirebaseAnalyticsService.swift in Sources */,
-				4D67F3F226537E8B0065F46D /* AnalyticsEventEnum.swift in Sources */,
+				4D67F3F226537E8B0065F46D /* Event.swift in Sources */,
 				4D47B497264ACC340097BE13 /* API.swift in Sources */,
 				4D8E4536264D191A001D0147 /* AppDelegate.swift in Sources */,
 				4DA68E50264BFEDE0045EB33 /* String+HTML.swift in Sources */,
@@ -593,7 +593,7 @@
 			repositoryURL = "https://github.com/0xMarK/AnalyticsCenter.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.1;
+				minimumVersion = 0.0.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

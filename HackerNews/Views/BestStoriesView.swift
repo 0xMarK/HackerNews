@@ -30,7 +30,7 @@ struct BestStoriesView: View {
     private func onAppear() {
         // Workaround: not to be called 2 times on app start
         if Date().timeIntervalSince1970 - didAppearTimeInterval > 0.5 {
-            analytics.track(AnalyticsEventEnum.screenView(screenClass: nil, screenName: "Best Stories"))
+            analytics.track(Event.screenView(screenClass: nil, screenName: "Best Stories"))
             loadData()
         }
         didAppearTimeInterval = Date().timeIntervalSince1970

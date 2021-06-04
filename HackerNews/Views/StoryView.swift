@@ -52,7 +52,7 @@ struct StoryView: View {
     }
     
     private func onAppear() {
-        analytics.track(AnalyticsEventEnum.selectContent(contentType: "story", itemID: "\(story.id)"))
+        analytics.track(Event.selectContent(contentType: "story", itemID: "\(story.id)"))
     }
     
     private var navigationBarItems: some View {

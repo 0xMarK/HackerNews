@@ -42,7 +42,7 @@ struct HackerNewsApp: App {
             .onChange(of: scenePhase) { newScenePhase in
                 switch newScenePhase {
                 case .active:
-                    appDelegate.analyticsCenter.track(AnalyticsEventEnum.appOpen)
+                    appDelegate.analyticsCenter.track(Event.appOpen)
                 default:
                     break
                 }

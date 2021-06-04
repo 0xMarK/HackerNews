@@ -1,5 +1,5 @@
 //
-//  AnalyticsEventEnum.swift
+//  Event.swift
 //  HackerNews
 //
 //  Created by Anton Kaliuzhnyi on 18.05.2021.
@@ -7,7 +7,7 @@
 
 import AnalyticsCenter
 
-enum AnalyticsEventEnum {
+enum Event {
     
     /// By logging this event when an App becomes active, developers can understand
     /// how often users leave and return during the course of a Session.
@@ -26,7 +26,7 @@ enum AnalyticsEventEnum {
     
 }
 
-extension AnalyticsEventEnum: AnalyticsEvent {
+extension Event: AnalyticsEvent {
     
     var name: String {
         guard let range = String(describing: self).range(of: #"^[^(]+"#, options: .regularExpression) else {
@@ -39,8 +39,9 @@ extension AnalyticsEventEnum: AnalyticsEvent {
         var parameters: [String: Any] = [:]
         if let firstChild = Mirror(reflecting: self).children.first {
             for childOfValue in Mirror(reflecting: firstChild.value).children {
-                if let parameterName = childOfValue.label {
-                    parameters[parameterName] = childOfValue.value
+                if let key = childOfValue.label,
+                   case Optional<Any>.some(let value) = childOfValue.value {
+                    parameters[key] = value
                 }
                 
             }
@@ -49,4 +50,3 @@ extension AnalyticsEventEnum: AnalyticsEvent {
     }
     
 }
-
